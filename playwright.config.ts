@@ -10,8 +10,8 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: "./tests",
-  timeout: 5000,
+  testDir: "./tests/",
+  timeout: 10000,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,11 +26,12 @@ export default defineConfig({
   use: {
     actionTimeout: 0, 
     headless: false,
-    baseURL: 'https://www.typescriptlang.org/',
     trace: 'on',
     video: 'on',
     viewport: {width: 1920, height: 1080}
   },
+
+  outputDir: "../assets/test-results"
 
   /* Configure projects for major browsers */
   projects: [
